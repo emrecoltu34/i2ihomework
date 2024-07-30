@@ -1,1 +1,2 @@
-"Version 3.0 development" 
+Version 3.0 development
+Bugfix applied to version 2.5.4
