@@ -1,0 +1,116 @@
+
+C:\Users\emrec\project>git init
+Initialized empty Git repository in C:/Users/emrec/project/.git/
+
+C:\Users\emrec\project>echo "Initial version" > product.txt
+
+C:\Users\emrec\project>git add product.txt
+
+C:\Users\emrec\project>git commit -m "Initial commit"
+[master (root-commit) a64178a] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 product.txt
+
+C:\Users\emrec\project>git checkout -b r2.5.4
+Switched to a new branch 'r2.5.4'
+
+C:\Users\emrec\project>echo "Version 2.5.4" > product.txt
+
+C:\Users\emrec\project>git add product.txt
+
+C:\Users\emrec\project>git commit -m "Release r2.5.4"
+[r2.5.4 ef8ab77] Release r2.5.4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\emrec\project>git checkout -b r2.5.5
+Switched to a new branch 'r2.5.5'
+
+C:\Users\emrec\project>echo "Version 2.5.5" > product.txt
+
+C:\Users\emrec\project>git add product.txt
+
+C:\Users\emrec\project>git commit -m "Prepare for r2.5.5 release"
+[r2.5.5 6e1e152] Prepare for r2.5.5 release
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\emrec\project>git checkout -b r3.0
+Switched to a new branch 'r3.0'
+
+C:\Users\emrec\project>echo "Version 3.0 development" > product.txt
+
+C:\Users\emrec\project>git add product.txt
+
+C:\Users\emrec\project>git commit -m "Start development of version 3.0"
+[r3.0 c028176] Start development of version 3.0
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\emrec\project>git checkout r2.5.4
+Switched to branch 'r2.5.4'
+
+C:\Users\emrec\project>git checkout -b r2.5.4.1-bugfix
+Switched to a new branch 'r2.5.4.1-bugfix'
+
+C:\Users\emrec\project>echo "Bugfix applied to version 2.5.4" > product.txt
+
+C:\Users\emrec\project>git add product.txt
+
+C:\Users\emrec\project>git commit -m "Fix bug in r2.5.4"
+[r2.5.4.1-bugfix db44e33] Fix bug in r2.5.4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\emrec\project>git checkout r2.5.5
+Switched to branch 'r2.5.5'
+
+C:\Users\emrec\project>git merge r2.5.4.1-bugfix
+Auto-merging product.txt
+CONFLICT (content): Merge conflict in product.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+C:\Users\emrec\project>git add product.txt
+
+C:\Users\emrec\project>git commit -m "Resolve merge conflict between r2.5.5 and r2.5.4.1-bugfix"
+[r2.5.5 47fea8e] Resolve merge conflict between r2.5.5 and r2.5.4.1-bugfix
+
+C:\Users\emrec\project>git checkout r3.0
+Switched to branch 'r3.0'
+
+C:\Users\emrec\project>git merge r2.5.4.1-bugfix
+Auto-merging product.txt
+CONFLICT (content): Merge conflict in product.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+C:\Users\emrec\project>git add product.txt
+
+C:\Users\emrec\project>git commit -m "Resolve merge conflict between r3.0 and r2.5.4.1-bugfix"
+[r3.0 2bc16a2] Resolve merge conflict between r3.0 and r2.5.4.1-bugfix
+
+C:\Users\emrec\project>git remote add origin https://github.com/emrecoltu34/i2ihomework.git
+
+C:\Users\emrec\project>git push origin 'r.3.0'
+error: src refspec 'r.3.0' does not match any
+error: failed to push some refs to 'https://github.com/emrecoltu34/i2ihomework.git'
+
+C:\Users\emrec\project>git branch
+  master
+  r2.5.4
+  r2.5.4.1-bugfix
+  r2.5.5
+* r3.0
+
+C:\Users\emrec\project>git push origin r3.0
+info: please complete authentication in your browser...
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (18/18), 1.45 KiB | 493.00 KiB/s, done.
+Total 18 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'r3.0' on GitHub by visiting:
+remote:      https://github.com/emrecoltu34/i2ihomework/pull/new/r3.0
+remote:
+To https://github.com/emrecoltu34/i2ihomework.git
+ * [new branch]      r3.0 -> r3.0
+
+C:\Users\emrec\project>
